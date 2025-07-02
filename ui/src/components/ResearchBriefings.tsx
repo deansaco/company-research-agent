@@ -6,7 +6,6 @@ type BriefingStatus = {
   industry: boolean;
   financial: boolean;
   news: boolean;
-  social_media: boolean;
 };
 
 interface ResearchBriefingsProps {
@@ -50,8 +49,8 @@ const ResearchBriefings: React.FC<ResearchBriefingsProps> = ({
       <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
         isExpanded ? 'mt-6 max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
       }`}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 px-1">
-          {['company', 'industry', 'financial', 'news', 'social_media'].map((category) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 px-1">
+          {['company', 'industry', 'financial', 'news'].map((category) => (
             <div 
               key={category} 
               className={`${cardGlassStyle} rounded-lg p-4 transition-all duration-500 ease-in-out relative ${
@@ -69,11 +68,11 @@ const ResearchBriefings: React.FC<ResearchBriefingsProps> = ({
               />
               
               <div className="relative z-10 flex items-center justify-between">
-                <h3 className={`text-sm font-medium transition-all duration-500 ${
+                <h3 className={`text-sm font-medium capitalize transition-all duration-500 ${
                   briefingStatus[category as keyof BriefingStatus]
                     ? 'text-[#468BFF]'
                     : 'text-gray-700 group-hover:text-gray-900'
-                }`}>{category === 'social_media' ? 'Social Media' : category.charAt(0).toUpperCase() + category.slice(1)}</h3>
+                }`}>{category}</h3>
                 {briefingStatus[category as keyof BriefingStatus] ? (
                   <CheckCircle2 className="h-4 w-4 text-[#468BFF] transition-all duration-300" />
                 ) : (

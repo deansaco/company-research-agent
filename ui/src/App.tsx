@@ -50,8 +50,7 @@ function App() {
       company: false,
       industry: false,
       financial: false,
-      news: false,
-      social_media: false
+      news: false
     }
   });
   const [originalCompanyName, setOriginalCompanyName] = useState<string>("");
@@ -137,8 +136,7 @@ function App() {
           company: false,
           industry: false,
           financial: false,
-          news: false,
-          social_media: false
+          news: false
         }
       });
       setPdfUrl(null);
