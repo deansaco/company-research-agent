@@ -24,6 +24,7 @@ export type EnrichmentCounts = {
   industry: { total: number; enriched: number };
   financial: { total: number; enriched: number };
   news: { total: number; enriched: number };
+  social_media: { total: number; enriched: number };
 };
 
 export type ResearchState = {
@@ -47,6 +48,7 @@ export type ResearchState = {
     industry: boolean;
     financial: boolean;
     news: boolean;
+    social_media: boolean;
   };
   enrichmentCounts?: EnrichmentCounts;
   docCounts?: DocCounts;

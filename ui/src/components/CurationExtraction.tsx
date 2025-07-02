@@ -6,6 +6,7 @@ type EnrichmentCounts = {
   industry: { total: number; enriched: number };
   financial: { total: number; enriched: number };
   news: { total: number; enriched: number };
+  social_media: { total: number; enriched: number };
 };
 
 interface CurationExtractionProps {
@@ -51,12 +52,12 @@ const CurationExtraction: React.FC<CurationExtractionProps> = ({
       <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
         isExpanded ? 'mt-4 max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
       }`}>
-        <div className="grid grid-cols-4 gap-4">
-          {['company', 'industry', 'financial', 'news'].map((category) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {['company', 'industry', 'financial', 'news', 'social_media'].map((category) => {
             const counts = enrichmentCounts?.[category as keyof EnrichmentCounts];
             return (
               <div key={category} className="backdrop-blur-2xl bg-white/95 border border-gray-200/50 rounded-xl p-3 shadow-none">
-                <h3 className="text-sm font-medium text-gray-700 mb-2 capitalize">{category}</h3>
+                <h3 className="text-sm font-medium text-gray-700 mb-2">{category === 'social_media' ? 'Social Media' : category.charAt(0).toUpperCase() + category.slice(1)}</h3>
                 <div className="text-gray-900">
                   <div className="text-2xl font-bold mb-1">
                     {counts ? (
