@@ -143,6 +143,35 @@ Key requirements:
 4. Do not mention "no information found" or "no data available"
 5. Never use ### headers, only bullet points
 6. Provide only the briefing. Do not provide explanations or commentary.""",
+
+            'social_media': f"""Create a focused social media briefing for {company}, a {industry} company based in {hq_location}.
+Key requirements:
+1. Structure using these exact headers and bullet points:
+
+### Social Media Presence
+* List verified social media profiles
+* List follower counts and engagement metrics
+* List content strategy observations
+
+### Community Sentiment
+* List public discussions and sentiment
+* List common topics and themes
+* List user feedback and reviews
+
+### Social Media Marketing
+* List social media campaigns and initiatives
+* List influencer partnerships
+* List social media advertising efforts
+
+### Online Reputation
+* List brand mentions and coverage
+* List awards or recognition from social platforms
+* List crisis management or controversies
+
+2. Each bullet must be a single, complete fact
+3. No paragraphs, only bullet points
+4. Never mention "no information found" or "no data available"
+5. Provide only the briefing. No explanations or commentary.""",
         }
         
         # Normalize docs to a list of (url, doc) tuples
@@ -234,7 +263,8 @@ Analyze the following documents and extract key information. Provide only the br
             'financial_data': ("financial", "financial_briefing"),
             'news_data': ("news", "news_briefing"),
             'industry_data': ("industry", "industry_briefing"),
-            'company_data': ("company", "company_briefing")
+            'company_data': ("company", "company_briefing"),
+            'social_media_data': ("social_media", "social_media_briefing")
         }
         
         briefings = {}
